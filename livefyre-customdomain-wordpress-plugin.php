@@ -62,7 +62,7 @@ register_deactivation_hook(__FILE__,'my_deactivation');
 function daily_sync(){
 	$users = get_users();
 	foreach($users as $user){
-		$user = get_userdata($user->ID)
+		$user = get_userdata($user->ID);
 		$user_json = array(
 			'id' => $user->ID,
 			'display_name' => $user->display_name,
@@ -152,12 +152,6 @@ function lfwp_settings_page() {
         <td><input type="password" name="api_secret" value="<?php echo get_option('api_secret'); ?>" /></td>
         </tr>
     </table>
-    <?php
-    	$users = get_users();
-		foreach($users as $user){
-			print_r($user);
-		}
-    ?>
     <p class="submit">
     <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
     </p>
