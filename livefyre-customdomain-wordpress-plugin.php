@@ -126,36 +126,36 @@ function lfwp_settings_page() {
 <form method="post" action="options.php">
     <?php settings_fields( 'lfwp-settings-group' ); ?>
     <?php //do_settings( 'lfwp-settings-group' ); ?>
-    <table class="form-table">
-        <tr valign="top">
-        <th scope="row">Domain URL</th>
-        <td><input type="text" name="domain_url" value="<?php echo get_option('domain_url'); ?>" /></td>
-        </tr>
+	<h3>1. Enter your account details (received by mail from livefyre)</h3>
+		<p>
+			<label>Domain URL</label><input type="text" name="domain_url" value="<?php echo get_option('domain_url'); ?>" />
+		</p>
 
-		<tr valign="top">
-        <th scope="row">Domain API Key</th>
-        <td><input type="password" name="domain_api" value="<?php echo get_option('domain_api'); ?>" /></td>
-        </tr>
+		<p>
+        	<label>Domain API Key</label><input type="password" name="domain_api" value="<?php echo get_option('domain_api'); ?>" />
+    	</p>
 
-		<tr valign="top">
-        <th scope="row">Domain Owner</th>
-        <td><input type="text" name="domain_owner" value="<?php echo get_option('domain_owner'); ?>" /></td>
-        </tr>
+		<p>
+        	<label>Domain Owner</label><input type="text" name="domain_owner" value="<?php echo get_option('domain_owner'); ?>" />
+        </p>
+		
+		<p class="submit">
+	    <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+	    </p>
+	<h3>2. Register your website</h3>
+		<p>
+        	<label>Site ID</label><input type="text" name="site_id" value="<?php echo get_option('site_id'); ?>" />
+        </p>
 
-		<tr valign="top">
-        <th scope="row">Site ID</th>
-        <td><input type="text" name="site_id" value="<?php echo get_option('site_id'); ?>" /></td>
-        </tr>
-
-		<tr valign="top">
-        <th scope="row">API Secret</th>
-        <td><input type="password" name="api_secret" value="<?php echo get_option('api_secret'); ?>" /></td>
-        </tr>
-    </table>
-    <p class="submit">
-    <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
-    </p>
-
+		<p>
+        	<label>API Secret</label><input type="password" name="api_secret" value="<?php echo get_option('api_secret'); ?>" />
+        </p>
+    	<p class="submit">
+	    <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+	    </p>
 </form>
+<h3>3. Test your connection</h3>
+	<p id="livefyre_test"><button>Test</button></p>
+	<p id="livefyre_forceSync"><button>Force User Sync</button></p>
 </div>
 <?php } ?>
